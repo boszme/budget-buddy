@@ -3,6 +3,7 @@ import { StyleSheet, ListView, AlertIOS, ListViewDataSource, Navigator } from 'r
 //import { StyleSheet, Text, View, ListView, AlertIOS} from 'react-native';
 import { Container, Button, Text, Header, Left, Right, Icon, Body, Title, Fab, View} from 'native-base';
 import * as firebase from "firebase";
+import { dbConfig } from "./DBConf.js";
 //import Input from './Input.js';
 //import log4js from 'log4js';
 //const firebase = require('firebase');
@@ -13,17 +14,9 @@ const Roboto = require('native-base/Fonts/Roboto.ttf');
 const Roboto_medium = require('native-base/Fonts/Roboto_medium.ttf');
 //const styles = require('./styles.js')
 
-// Initialize Firebase
-var config = {
-  apiKey: "AIzaSyAb41XTdtm2Xd4rNk-6CHCA-2swUNT2bNw",
-  authDomain: "exptrack-1ff33.firebaseapp.com",
-  databaseURL: "https://exptrack-1ff33.firebaseio.com",
-  projectId: "exptrack-1ff33",
-  storageBucket: "exptrack-1ff33.appspot.com",
-  messagingSenderId: "536001063264"
-};
+console.log(dbConfig)
 
-const firebaseAPP = firebase.initializeApp(config);
+const firebaseAPP = firebase.initializeApp(dbConfig);
 
 var styles = StyleSheet.create()
 

@@ -6,6 +6,10 @@ import SideBar from "./SideBar.js";
 import AboutScreen from "./AboutScreen.js"
 import InputScreen from "./InputScreen.js"
 import { DrawerNavigator } from "react-navigation";
+
+import * as firebase from "firebase";
+import { dbConfig } from "./DBConf.js";
+
 const HomeScreenRouter = DrawerNavigator(
   {
     Home: { screen: HomeScreen },
@@ -18,3 +22,5 @@ const HomeScreenRouter = DrawerNavigator(
   }
 );
 export default HomeScreenRouter;
+
+export const firebaseAPP = firebase.initializeApp(dbConfig);

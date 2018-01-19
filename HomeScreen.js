@@ -1,22 +1,13 @@
 import React from 'react';
 import { StyleSheet, ListView, AlertIOS, ListViewDataSource, Navigator } from 'react-native';
-//import { StyleSheet, Text, View, ListView, AlertIOS} from 'react-native';
 import { Container, Button, Text, Header, Left, Right, Icon, Body, Title, Fab, View} from 'native-base';
-import * as firebase from "firebase";
-import { dbConfig } from "./DBConf.js";
-//import Input from './Input.js';
-//import log4js from 'log4js';
-//const firebase = require('firebase');
+import { firebaseAPP } from "./App.js";
 const StatusBar = require('./components/StatusBar');
 const ActionButton = require('./components/ActionButton');
 const ListItem = require('./components/ListItem');
 const Roboto = require('native-base/Fonts/Roboto.ttf');
 const Roboto_medium = require('native-base/Fonts/Roboto_medium.ttf');
-//const styles = require('./styles.js')
 
-console.log(dbConfig)
-
-const firebaseAPP = firebase.initializeApp(dbConfig);
 
 var styles = StyleSheet.create()
 
@@ -92,7 +83,7 @@ export default class HomeScreen extends React.Component {
             <Button style={ { backgroundColor: '#34A34F' } } onPress={this._addItem.bind(this)}>
               <Icon name="md-add-circle" />
             </Button>
-            <Button style={ { backgroundColor: 'red' } } onPress={this._goToSignup.bind(this)}>
+            <Button style={ { backgroundColor: 'red' } } onPress={this._goToInput.bind(this)}>
               <Icon name="md-remove-circle" />
             </Button>
           </Fab>
@@ -148,10 +139,8 @@ export default class HomeScreen extends React.Component {
       <ListItem item={ item } onPress={ onPress } />
       );
   }
-  // Go to the signup page
-_goToSignup() {
-  this.props.navigator.push({
-  component: Add
-});
+  // Go to the input page
+_goToInput() {
+  this.props.navigation.navigate("Input")
 }
 }

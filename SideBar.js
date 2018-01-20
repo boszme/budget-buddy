@@ -16,7 +16,7 @@ export default class SideBar extends React.Component {
               alignSelf: "stretch",
               justifyContent: "center",
               alignItems: "center"
-            }}>
+            }}></Image>
             <Image
               square
               style={{ height: 80, width: 70 }}
@@ -24,7 +24,6 @@ export default class SideBar extends React.Component {
                 uri: "https://github.com/GeekyAnts/NativeBase-KitchenSink/raw/react-navigation/img/logo.png"
               }}
             />
-          </Image>
           <List
             dataArray={routes}
             renderRow={data => {

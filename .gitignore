@@ -4,3 +4,4 @@ npm-debug.*
 yarn*
 .DS_Store
 DBConf.js
+package-lock.json

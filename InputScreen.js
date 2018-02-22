@@ -30,7 +30,7 @@ export default class InputScreen extends React.Component {
            <Icon name="plane" />
          </Left>
          <Body>
-           <Text>Airplane Mode</Text>
+           <Text>Expense/Income</Text>
          </Body>
          <Right>
            <Switch value={false} />
